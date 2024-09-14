@@ -16,10 +16,9 @@ public class IntArray {
             numbers[i] = rand.nextInt(0, 100);
     }
 
-    void adjust(int lower, int upper) {
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = lower + numbers[i] * (upper - lower) / 100;
-        }
+    void generate(int lower, int higher){
+        for (int i = 0; i < numbers.length; i++)
+            numbers[i] = lower+ rand.nextInt(0, 100)*(higher-lower)/100;
     }
     void print() {
         for (int n : numbers) {
