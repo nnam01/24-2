@@ -1,13 +1,15 @@
+package week1;
+
 import java.util.Scanner;
 
-public class hw4 {
+public class Hw4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int i= 0;
+        int i;
         while(true){
             System.out.print("크기를 입력하세요...");
             i = scanner.nextInt();
-            //0이면 탈출
+
             if(i==0) {
                 System.out.println("안녕히 가세요");
                 break;
