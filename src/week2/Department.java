@@ -28,7 +28,7 @@ public class Department {
                 array.print();
                 while(true) {
                     System.out.print("점수 반영하시겠습니까? (y/n)");
-                    char choice = scanner.next().charAt(0);
+                    choice = scanner.next().charAt(0);
                     if (choice == 'y') {
                         System.out.print("(1) 점수 그대로 반영   (2) 높은 점수 반영 ...");
                         int menuChoice = scanner.nextInt();
