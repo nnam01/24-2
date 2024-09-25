@@ -7,18 +7,19 @@ public class Item {
     String code;
     String name;
     int price;
-
-
+    static int itemCount = 0;
 
     Item(String code){
-        this.num =
+        itemCount++;
+        this.num = itemCount;
         this.code = code;
     }
     void read(Scanner scanner){
-
+        name = scanner.next();
+        price = scanner.nextInt();
     }
     void print(){
-
+        System.out.printf("[%d] %s %s (%d원)\n", num, code, name, price);
     }
 
     boolean matches(){
