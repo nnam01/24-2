@@ -20,12 +20,13 @@ public class User {
         point = scanner.nextInt();
         int x = -1;
         Item i = null;
-        while( x!=0 ){
+        while(true){
             x = scanner.nextInt();
+            if(x==0) break;
             i = store.findItem(x);
             if(i!=null) {
-                total = +i.price;
-                point = +(int) (i.price * 0.1);
+                total = total+i.price;
+                point = point+(int) (i.price * 0.01);
             }
             basket.add(i);
         }
@@ -33,13 +34,20 @@ public class User {
     void print(){
         System.out.printf("[%s] 총구매 %d건 %d원 (%d점)\n\t", name, basket.size(), total, point );
         for (int a = 0; a < basket.size(); a++) {
-            System.out.print(basket.indexOf(a)+" ");
+            System.out.print(basket.get(a).name+" ");
         }
         System.out.println();
     }
-    //[lee] 총구매 4건 4830원 (47점)
-    // 델리투명자  비비드스프링노트  아트인덱스노트  돌돌이자
-    void matches(){
+    boolean equalName(String kwd){
+        return name.equals(kwd);
+    }
 
+    boolean matches(String kwd) {
+        for (Item item : basket) {
+            if (item.code.equals(kwd) || ("" + item.num).equals(kwd)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -7,11 +7,11 @@ public class Item {
     String code;
     String name;
     int price;
-    static int itemCount = 0;
+    static int itemNumber = 0;
 
     Item(String code){
-        itemCount++;
-        this.num = itemCount;
+        itemNumber++;
+        this.num = itemNumber;
         this.code = code;
     }
     void read(Scanner scanner){
@@ -22,7 +22,13 @@ public class Item {
         System.out.printf("[%d] %s %s (%d원)\n", num, code, name, price);
     }
 
-    boolean matches(){
+    boolean matches(String kwd){
+        if ((""+num).equals(kwd))
+            return true;
+        if (code.equals(kwd))
+            return true;
+        if (name.contains(kwd))
+            return true;
         return false;
     }
 }
